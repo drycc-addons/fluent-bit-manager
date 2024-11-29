@@ -1,0 +1,38 @@
+[project]
+name = "fluentbit-manager"
+dynamic = ["version"]
+description = "fluentbit kubernetes manager"
+requires-python = ">=3.8"
+dependencies = [
+  "click==8.1.7",
+  "kubernetes==31.0.0",
+]
+authors = [
+    { name="duanhongyi", email="duanhongyi@doopai.com" }
+]
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+fluentbit-manager = "manager.controller:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = [
+    "manager"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "manager"
+]
+
+[tool.hatch.version]
+path = "manager/__init__.py"
