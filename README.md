@@ -1,6 +1,6 @@
-# Redis Proxy
+# Fluent Bit manager 
 
-Fluentbit manager is a lightweight, fast but powerful kubernetes daemonset manager.
+Fluent Bit manager is a lightweight, fast but powerful kubernetes daemonset manager.
 
 ## Usage
 
