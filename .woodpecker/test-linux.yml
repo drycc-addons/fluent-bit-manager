@@ -1,0 +1,12 @@
+labels:
+  type: exec
+
+steps:
+- name: test-linux
+  image: bash
+  commands:
+  - make test
+  when:
+    event:
+    - push
+    - tag

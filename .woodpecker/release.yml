@@ -1,0 +1,19 @@
+labels:
+  type: exec
+
+steps:
+- name: publish-linux
+  image: bash
+  commands:
+  - sed -i "s#dev#$CI_COMMIT_TAG#g" manager/__init__.py
+  - make build
+  - $(pwd)/_scripts/push_release.sh
+  - make clean
+  secrets:
+  - github_token
+  when:
+    event:
+    - tag
+
+depends_on:
+- test-linux
